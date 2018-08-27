@@ -1,9 +1,11 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-vms = { "192.168.100.211" => "kafka-1",
-        "192.168.100.212" => "kafka-2",
-        "192.168.100.213" => "kafka-3" }
+name = "kafka"
+
+vms = { "192.168.100.211" => "#{name}-1",
+        "192.168.100.212" => "#{name}-2",
+        "192.168.100.213" => "#{name}-3" }
 
 Vagrant.configure("2") do |config|
 
@@ -41,7 +43,7 @@ Vagrant.configure("2") do |config|
 
         sed -i '1d' /etc/hosts
 
-        if [ "kafka-1" == "#{vm_name}" ];then wget https://bootstrap.pypa.io/get-pip.py -O -|python && pip install ansible;fi
+        if [ "#{name}-1" == "#{vm_name}" ];then wget https://bootstrap.pypa.io/get-pip.py -O -|python && pip install ansible;fi
       SHELL
       # node.ssh.private_key_path = ".setting/private_key"
       # node.ssh.username = "ifnoelse"
