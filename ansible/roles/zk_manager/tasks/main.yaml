@@ -1,0 +1,9 @@
+- name: "zk {{action}}"
+  become: true
+  shell: "{{zk_home}}/bin/zkServer.sh {{action}}"
+  register: res
+  ignore_errors: true
+
+- name: 执行结果
+  debug:
+    msg: "{{res.stdout_lines}}"

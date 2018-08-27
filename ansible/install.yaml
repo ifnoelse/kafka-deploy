@@ -1,0 +1,7 @@
+- name: "安装 zookeeper"
+  gather_facts: no
+  hosts: client
+  roles:
+  - { role: res }
+  tags:
+  - res

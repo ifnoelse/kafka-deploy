@@ -1,0 +1,9 @@
+res_dir: /vagrant/res #安装文件所在目录，也就是res文件夹所在目录
+zk_data_dir: /var/lib/zookeeper
+zk_installation_path: /home/ifnoelse
+zk_home: "{{zk_installation_path}}/zookeeper-{{zk_version}}"
+
+zk_version: 3.4.12
+zk_tar: zookeeper-{{zk_version}}.tar.gz
+
+kafka_res_url: http://mirror.bit.edu.cn/apache/kafka/2.0.0/kafka_2.12-2.0.0.tgz

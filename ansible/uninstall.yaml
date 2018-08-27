@@ -1,0 +1,15 @@
+- name: "停止 zookeeper"
+  gather_facts: no
+  hosts: zk
+  roles:
+  - { role: zk_manager, action: stop}
+  tags:
+  - stop_zookeeper
+
+- name: "删除 zookeeper"
+  gather_facts: no
+  hosts: zk
+  roles:
+  - del_zk
+  tags:
+  - del_zk

@@ -1,0 +1,3 @@
+- name: 下载 kafka
+  become: true
+  shell: "wget {{kafka_res_url}}"
