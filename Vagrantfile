@@ -44,6 +44,8 @@ Vagrant.configure("2") do |config|
         sed -i '1d' /etc/hosts
 
         if [ "#{name}-1" == "#{vm_name}" ];then wget https://bootstrap.pypa.io/get-pip.py -O -|python && pip install ansible;fi
+
+        yum install -y java
       SHELL
       # node.ssh.private_key_path = ".setting/private_key"
       # node.ssh.username = "ifnoelse"
