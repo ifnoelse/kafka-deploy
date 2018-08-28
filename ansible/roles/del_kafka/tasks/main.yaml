@@ -1,0 +1,8 @@
+- name: 删除 kafka 相关目录
+  become: true
+  file:
+    path: "{{item}}"
+    state: absent
+  with_items:
+  - "{{kafka_data_dir}}"
+  - "{{kafka_home}}"

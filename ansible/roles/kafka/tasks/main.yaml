@@ -1,0 +1,19 @@
+- name: 创建 kafka 相关目录
+  become: true
+  file:
+    path: "{{item}}"
+    state: directory
+  with_items:
+  - "{{kafka_data_dir}}"
+
+- name: 复制 kafka 相关文件
+  become: true
+  unarchive:
+    src: "{{res_dir}}/{{kafka_tar}}"
+    dest: "{{kafka_installation_path}}"
+
+- name: 复制 server.properties
+  become: true
+  template:
+    src: server.properties.j2
+    dest: "{{kafka_home}}/config/server.properties"

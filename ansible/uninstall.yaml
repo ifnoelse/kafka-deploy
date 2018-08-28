@@ -1,15 +1,15 @@
-- name: "停止 zookeeper"
+- name: "停止 kafka"
   gather_facts: no
-  hosts: zk
+  hosts: kafka
   roles:
-  - { role: zk_manager, action: stop}
+  - { role: kafka_manager, action: kafka-server-stop.sh}
   tags:
-  - stop_zookeeper
+  - stop_kafka
 
-- name: "删除 zookeeper"
+- name: "删除 kafka"
   gather_facts: no
-  hosts: zk
+  hosts: kafka
   roles:
-  - del_zk
+  - del_kafka
   tags:
-  - del_zk
+  - del_kafka

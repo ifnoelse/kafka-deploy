@@ -1,0 +1,3 @@
+node_name: kafka-2
+node_ip: 192.168.100.212
+broker_id: 2

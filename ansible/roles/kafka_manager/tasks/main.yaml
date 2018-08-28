@@ -1,6 +1,8 @@
-- name: "zk {{action}}"
+- name: "执行 {{action}}"
   become: true
-  shell: "{{zk_home}}/bin/zkServer.sh {{action}}"
+  shell: "bin/{{action}}"
+  args:
+    chdir: "{{kafka_home}}"
   register: res
   ignore_errors: true
 

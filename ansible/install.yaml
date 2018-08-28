@@ -1,7 +1,15 @@
-- name: "安装 zookeeper"
+- name: "安装 kafka"
   gather_facts: no
-  hosts: client
+  hosts: kafka
   roles:
-  - { role: res }
+  - { role: kafka }
   tags:
-  - res
+  - kafka
+
+- name: "启动 kafka"
+  gather_facts: no
+  hosts: kafka
+  roles:
+  - { role: kafka_manager, action: "kafka-server-start.sh -daemon config/server.properties"}
+  tags:
+  - kafka-server-start

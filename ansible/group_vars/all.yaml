@@ -1,9 +1,8 @@
+kafka_tar: kafka_2.12-2.0.0.tgz
+
 res_dir: /vagrant/res #安装文件所在目录，也就是res文件夹所在目录
-zk_data_dir: /var/lib/zookeeper
-zk_installation_path: /home/ifnoelse
-zk_home: "{{zk_installation_path}}/zookeeper-{{zk_version}}"
+kafka_data_dir: /home/ifnoelse/kafka-logs
+kafka_installation_path: /home/ifnoelse
+kafka_home: "{{kafka_installation_path}}/kafka_2.12-2.0.0"
 
-zk_version: 3.4.12
-zk_tar: zookeeper-{{zk_version}}.tar.gz
-
-kafka_res_url: http://mirror.bit.edu.cn/apache/kafka/2.0.0/kafka_2.12-2.0.0.tgz
+zookeeper_connect: 192.168.100.201:2181,192.168.100.202:2181,192.168.100.203:2181
